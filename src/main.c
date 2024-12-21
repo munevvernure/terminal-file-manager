@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "../include/file_operations.h"
+#include "../include/directory_ops.h"
 
 //Function declarations
 /*void list_directory(const char* path);
@@ -29,36 +30,44 @@ int main(){
 
             } else if (strcmp(arg1, "help") == 0) {
                 printf("Available commands:\n");
-                printf("  slist <path>        - List directory contents\n");
-                printf("  sread <path>        - Read file contents\n");
-                printf("  swrite <path> <content> - Writes to the file\n");
-                printf("  scopy <src> <dest>  - Copy file\n");
-                printf("  sremove <path>      - Delete file\n");
-                printf("  smove <src> <dest>  -Moves file to the destination\n");
-                printf("  chmod <path> <perm> - Change permissions\n");
+                printf("  dlist <path>          - List directory contents\n");
+                printf("  dcreate <path>        - Create directory\n");
+                printf("  dremove <path>        - Delete directory\n");
+                printf("  fread <path>          - Read file contents\n");
+                printf("  fwrite <path> <content> - Writes to the file\n");
+                printf("  fcopy <src> <dest>    - Copy file\n");
+                printf("  fremove <path>        - Delete file\n");
+                printf("  fmove <src> <dest>    - Moves file to the destination\n");
+                printf("  chmod <path> <perm>   - Change permissions\n");
 
-            } else if (strcmp(arg1, "swrite") == 0) {
+            } else if (strcmp(arg1, "fwrite") == 0) {
                 if (strlen(arg2) > 0 && strlen(content) > 0) {
                     write_file(arg2, content); // arg2: path, content: content to be written
                 } else {
                     printf("Invalid command format for swrite. Use: swrite <path> <content>\n");
                 }
 
-            } else if (strcmp(arg1, "slist") == 0) {
-                // list_directory(arg2);
+            } else if (strcmp(arg1, "dlist") == 0) {
+                  list_directory(arg2);
 
-            } else if (strcmp(arg1, "sread") == 0) {
+            } else if (strcmp(arg1, "dcreate") == 0) {
+                  create_directory(arg2);
+                  
+            } else if (strcmp(arg1, "dremove") == 0) {
+                  delete_directory(arg2);
+            
+            } else if (strcmp(arg1, "fread") == 0) {
                 read_file(arg2);
 
-            } else if (strcmp(arg1, "sremove") == 0) {
+            } else if (strcmp(arg1, "fremove") == 0) {
                 delete_file(arg2);
 
-            } else if (strcmp(arg1, "scopy") == 0) {
+            } else if (strcmp(arg1, "fcopy") == 0) {
                 sscanf(command, "%*s %127s %[^\n]", arg2, content);
                 copy_file(arg2, content);
                 printf("File content is successfully copied from %s to %s\n", arg2, content);
 
-            } else if (strcmp(arg1, "smove") == 0 ) {
+            } else if (strcmp(arg1, "fmove") == 0 ) {
                 sscanf(command, "%*s %127s %[^\n]", arg2, content);
                 move_file(arg2, content);
             

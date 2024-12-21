@@ -4,7 +4,7 @@
 This project is a **Terminal-Based File Manager** designed to perform basic file management operations using Linux/Unix system calls. The program provides a command-line interface (CLI) to interact with the file system, enabling efficient file and folder operations.
 
 ### Features
-- **File Operations**: Read, write, copy, and delete files.
+- **File Operations**: Read, write, copy, move and delete files.
 - **Directory Operations**: List, create, and delete directories.
 - **File/Folder Permissions**: Check and modify permissions.
 - **File Search**: Search for files within a directory.
@@ -13,7 +13,7 @@ This project is a **Terminal-Based File Manager** designed to perform basic file
 
 ### System Calls Used
 - File and Directory Management: `opendir`, `readdir`, `creat`, `unlink`, `rmdir`
-- File Operations: `open`, `read`, `write`, `rename`
+- File Operations: `open`, `read`, `write`, `delete`, `rename`
 - Permissions: `chmod`
 - Logging: `open`, `write`
 
@@ -27,24 +27,24 @@ project/
 │   ├── file_operations.c   # Handles file read, write, copy, and move operations
 │   ├── directory_ops.c     # Implements directory listing, creation, and deletion
 │   ├── permissions.c       # Manages file and folder permissions
-│   └──logger.c             # Logs all operations to a log file
+│   └── logger.c             # Logs all operations to a log file
 │ 
 ├── include/                # Header files
 └── bin/                    # Compiled executable
 └── Makefile                # Builds the project
 
 ### Example Commands
-- **List Files**:
+- **List Directories**:
   ```bash
-  > slist /home/user/documents
+  > dlist /home/user/documents
   ```
 - **Copy File**:
   ```bash
-  > scopy /home/user/file.txt /home/user/documents/
+  > fcopy /home/user/file.txt /home/user/documents/
   ```
 - **Remove File**:
   ```bash
-  > sremove /home/user/documents/oldfile.txt
+  > fremove /home/user/documents/oldfile.txt
   ```
 - **Change Permissions**:
   ```bash
