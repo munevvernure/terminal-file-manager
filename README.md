@@ -48,7 +48,7 @@ project/
   ```
 - **Change Permissions**:
   ```bash
-  > schmod 755 /home/user/documents
+  > pchange 755 /home/user/documents
   ```
 
 ## Getting Started
