@@ -4,6 +4,7 @@
 #include "../include/file_operations.h"
 #include "../include/directory_ops.h"
 #include "../include/permissions.h"
+#include "../include/logger.h"
 
 //Function declarations
 /*void list_directory(const char* path);
@@ -31,17 +32,19 @@ int main(){
 
             } else if (strcmp(arg1, "help") == 0) {
                 printf("Available commands:\n");
-                printf("  dlist <path>          - List directory contents\n");
-                printf("  dcreate <path>        - Create directory\n");
-                printf("  dremove <path>        - Delete directory\n");
-                printf("  fread <path>          - Read file contents\n");
-                printf("  fwrite <path> <content> - Writes to the file\n");
-                printf("  fcopy <src> <dest>    - Copy file\n");
-                printf("  fremove <path>        - Delete file\n");
-                printf("  fmove <src> <dest>    - Moves file to the destination\n");
-                printf("  pcheck <path>         - Check permissions of a file or directory\n");
-                printf("  pchange <path> <permissions> - Change permissions (permissions in octal format, e.g., 0644)\n");
-                
+                printf("  dlist <path>                    - List directory contents\n");
+                printf("  dcreate <path>                  - Create directory\n");
+                printf("  dremove <path>                  - Delete directory\n");
+                printf("  fread <path>                    - Read file contents\n");
+                printf("  fwrite <path> <content>         - Writes to the file\n");
+                printf("  fcopy <src> <dest>              - Copy file\n");
+                printf("  fremove <path>                  - Delete file\n");
+                printf("  fmove <src> <dest>              - Moves file to the destination\n");
+                printf("  pcheck <path>                   - Check permissions of a file or directory\n");
+                printf("  pchange <path> <permissions>    - Change permissions (permissions in octal format, e.g., 0644)\n");
+                printf("  logwrite <log_file> <message>   - Write a log entry with the specified message\n");
+                printf("  logread <log_file>              - Read and display the contents of the specified log file\n");
+
             } else if (strcmp(arg1, "fwrite") == 0) {
                 if (strlen(arg2) > 0 && strlen(content) > 0) {
                     write_file(arg2, content); // arg2: path, content: content to be written
@@ -83,8 +86,13 @@ int main(){
             } else {
                 printf("Error: Please specify the permissions in octal format.\n");
             }
-          }
-             else {
+          } else if (strcmp(arg1, "logwrite") == 0) {
+                sscanf(command, "%*s %127s %[^\n]", arg2, content);
+                write_log(arg2, content);
+          } else if (strcmp(arg1, "logread") == 0) {
+                read_logs(arg2);
+          
+          } else {
                 printf("Invalid command or arguments. Type 'help' for assistance.\n");
             }
 

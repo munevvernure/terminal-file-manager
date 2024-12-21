@@ -21,17 +21,22 @@ This project is a **Terminal-Based File Manager** designed to perform basic file
 The project is modular and consists of the following components:
 
 ```
-project/
+terminal-file-manager/
 ├── src/
-│   ├── main.c              # Controls the program flow and command parsing
-│   ├── file_operations.c   # Handles file read, write, copy, and move operations
-│   ├── directory_ops.c     # Implements directory listing, creation, and deletion
-│   ├── permissions.c       # Manages file and folder permissions
-│   └── logger.c             # Logs all operations to a log file
-│ 
-├── include/                # Header files
-└── bin/                    # Compiled executable
-└── Makefile                # Builds the project
+│   ├── main.c
+│   ├── file_operations.c
+│   ├── directory_ops.c
+│   ├── permissions.c
+│   ├── logger.c
+├── include/
+│   ├── file_operations.h
+│   ├── directory_ops.h
+│   ├── permissions.h
+│   ├── logger.h
+├── bin/
+│   └── file_manager  #executable file
+├── Makefile
+
 
 ### Example Commands
 - **List Directories**:
