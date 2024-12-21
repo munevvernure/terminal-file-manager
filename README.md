@@ -4,7 +4,7 @@
 This project is a **Terminal-Based File Manager** designed to perform basic file management operations using Linux/Unix system calls. The program provides a command-line interface (CLI) to interact with the file system, enabling efficient file and folder operations.
 
 ### Features
-- **File Operations**: Read, write, copy, and move files.
+- **File Operations**: Read, write, copy, and delete files.
 - **Directory Operations**: List, create, and delete directories.
 - **File/Folder Permissions**: Check and modify permissions.
 - **File Search**: Search for files within a directory.
@@ -27,11 +27,11 @@ project/
 │   ├── file_operations.c   # Handles file read, write, copy, and move operations
 │   ├── directory_ops.c     # Implements directory listing, creation, and deletion
 │   ├── permissions.c       # Manages file and folder permissions
-│   ├── logger.c            # Logs all operations to a log file
-│   └── Makefile            # Builds the project
+│   └──logger.c             # Logs all operations to a log file
+│ 
 ├── include/                # Header files
 └── bin/                    # Compiled executable
-```
+└── Makefile                # Builds the project
 
 ### Example Commands
 - **List Files**:
@@ -60,7 +60,7 @@ project/
 ### Building the Project
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/terminal-file-manager.git
+   git clone https://github.com/munevvernure/terminal-file-manager.git
    ```
 2. Navigate to the project directory:
    ```bash
