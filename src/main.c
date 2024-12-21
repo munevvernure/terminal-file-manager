@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "../include/file_operations.h"
 #include "../include/directory_ops.h"
+#include "../include/permissions.h"
 
 //Function declarations
 /*void list_directory(const char* path);
@@ -38,8 +39,9 @@ int main(){
                 printf("  fcopy <src> <dest>    - Copy file\n");
                 printf("  fremove <path>        - Delete file\n");
                 printf("  fmove <src> <dest>    - Moves file to the destination\n");
-                printf("  chmod <path> <perm>   - Change permissions\n");
-
+                printf("  pcheck <path>         - Check permissions of a file or directory\n");
+                printf("  pchange <path> <permissions> - Change permissions (permissions in octal format, e.g., 0644)\n");
+                
             } else if (strcmp(arg1, "fwrite") == 0) {
                 if (strlen(arg2) > 0 && strlen(content) > 0) {
                     write_file(arg2, content); // arg2: path, content: content to be written
@@ -71,11 +73,18 @@ int main(){
                 sscanf(command, "%*s %127s %[^\n]", arg2, content);
                 move_file(arg2, content);
             
-            } else if (strcmp(arg1, "chmod") == 0) {
-                int perm = strtol(content, NULL, 8);
-                // change_permissions(arg2, perm);
-
+            } else if (strcmp(arg1,"pcheck") == 0) {
+                check_permissions(arg2);
+            
+            } else if (strcmp(arg1, "pchange") == 0) {
+                if (strlen(command) > 0) {
+                int permissions = strtol(command, NULL, 8);
+                change_permissions(arg2, permissions);
             } else {
+                printf("Error: Please specify the permissions in octal format.\n");
+            }
+          }
+             else {
                 printf("Invalid command or arguments. Type 'help' for assistance.\n");
             }
 
