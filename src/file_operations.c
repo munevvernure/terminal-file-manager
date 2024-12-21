@@ -78,3 +78,12 @@ void delete_file(const char* path) {
         printf("File deleted successfully: %s\n",path);
     }
 }
+void move_file(const char *src, const char *dest) {
+    if (rename(src, dest) == 0 ) {
+      printf("File moved successfully from %s to %s\n", src, dest);
+    } else{
+      perror("Error moving file");
+    }
+} 
+
+

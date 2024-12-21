@@ -34,6 +34,7 @@ int main(){
                 printf("  swrite <path> <content> - Writes to the file\n");
                 printf("  scopy <src> <dest>  - Copy file\n");
                 printf("  sremove <path>      - Delete file\n");
+                printf("  smove <src> <dest>  -Moves file to the destination\n");
                 printf("  chmod <path> <perm> - Change permissions\n");
 
             } else if (strcmp(arg1, "swrite") == 0) {
@@ -57,6 +58,10 @@ int main(){
                 copy_file(arg2, content);
                 printf("File content is successfully copied from %s to %s\n", arg2, content);
 
+            } else if (strcmp(arg1, "smove") == 0 ) {
+                sscanf(command, "%*s %127s %[^\n]", arg2, content);
+                move_file(arg2, content);
+            
             } else if (strcmp(arg1, "chmod") == 0) {
                 int perm = strtol(content, NULL, 8);
                 // change_permissions(arg2, perm);
