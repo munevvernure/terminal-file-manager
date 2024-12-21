@@ -29,16 +29,20 @@ void read_file(const char* path){
 void write_file(const char* path, const char* content){
     //O_WRONLY: opens file only write mode O_CREAT:creates file if not exist O_APPEND:if file exist,appends 
     //the content at the end of file
+    
+    printf("Content to write: '%s' (length: %zu)\n", content, strlen(content)); // Debugging output
+   
     int fd = open(path, O_WRONLY | O_CREAT | O_APPEND, 0644);
     if (fd == -1) {
       perror("Error opening file!");
       return;
     }
     
-    ssize_t bytes_written = write (fd, content, sizeof(char) * strlen(content));
+    ssize_t bytes_written = write(fd, content, strlen(content));
     if (bytes_written == -1) {
       perror("Error writing to file");
     } else {
+      write(fd, "\n", 1); //adding new line after writing
       printf("Successfully wrote to the file: %s\n", path);
     }
     close(fd);

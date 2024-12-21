@@ -1,0 +1,32 @@
+[2024-12-21 18:41:42] dcreate: Success
+[2024-12-21 18:44:50] exit: Program terminated
+[2024-12-21 18:45:25] dremove: Success
+[2024-12-21 18:45:42] dlist: Success
+[2024-12-21 18:45:53] dlist: Success
+[2024-12-21 18:46:31] dlist: Success
+[2024-12-21 18:46:39] dlist: Success
+[2024-12-21 18:47:02] dlist: Success
+[2024-12-21 18:47:22] dcreate: Success
+[2024-12-21 18:47:36] dremove: Success
+[2024-12-21 18:48:25] dremove: Success
+[2024-12-21 18:48:41] fread: Success
+[2024-12-21 18:49:19] fwrite: Success
+[2024-12-21 18:55:35] fwrite: Success
+[2024-12-21 18:56:24] fwrite: Success
+[2024-12-21 18:57:44] fwrite: Success
+[2024-12-21 18:57:55] exit: Program terminated
+[2024-12-21 19:00:59] fwrite: Success
+[2024-12-21 19:09:15] exit: Program terminated
+[2024-12-21 19:10:11] fwrite: Success
+[2024-12-21 19:10:34] exit: Program terminated
+[2024-12-21 19:11:38] exit: Program terminated
+[2024-12-21 19:11:59] fwrite: Success
+[2024-12-21 19:12:17] fremove: Success
+[2024-12-21 19:12:24] exit: Program terminated
+[2024-12-21 19:12:45] fwrite: Success
+[2024-12-21 19:12:45] unknown: Error: Invalid command format
+[2024-12-21 19:17:20] exit: Program terminated
+[2024-12-21 19:18:13] fwrite: Success
+[2024-12-21 19:19:10] fwrite: Success
+[2024-12-21 19:21:16] fremove: Success
+[2024-12-21 19:22:05] exit: Program terminated
