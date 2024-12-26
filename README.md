@@ -4,7 +4,7 @@
 This project is a **Terminal-Based File Manager** designed to perform basic file management operations using Linux/Unix system calls. The program provides a command-line interface (CLI) to interact with the file system, enabling efficient file and folder operations.
 
 ### Features
-- **File Operations**: Create, Read, write, copy, move and delete files.
+- **File Operations**: Create, read, write, copy, move and delete files.
 - **Directory Operations**: List, create, and delete directories.
 - **File/Folder Permissions**: Check and modify permissions.
 - **Logging**: Log all operations performed by the user.
