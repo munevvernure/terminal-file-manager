@@ -29,6 +29,7 @@ int main(){
                 printf("  dlist <path>                    - List directory contents\n");
                 printf("  dcreate <path><directory_name>  - Create directory\n");
                 printf("  dremove <path>                  - Delete directory\n");
+                printf("  fcreate <path>                    -Creates an empty file\n");
                 printf("  fread <path>                    - Read file contents\n");
                 printf("  fwrite <path> <content>         - Writes to the file\n");
                 printf("  fcopy <src> <dest>              - Copy file\n");
