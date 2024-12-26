@@ -60,7 +60,10 @@ int main(){
                 delete_directory(arg2);
                 write_log("logs.txt", "dremove", "Success");
 
-            } else if (strcmp(arg1, "fread") == 0) {
+            } else if (strcmp(arg1, "fcreate") == 0) {
+                create_file(arg2);
+                 write_log("logs.txt", "fcreate", "Success");
+            }else if (strcmp(arg1, "fread") == 0) {
                 read_file(arg2);
                 write_log("logs.txt", "fread", "Success");
 

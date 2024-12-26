@@ -4,6 +4,20 @@
 #include <unistd.h>
 #include "../include/file_operations.h"
 
+void create_file(const char* path) {
+    // O_CREAT: creates file if it doesn't exist
+    // O_EXCL: ensures file doesn't already exist (returns error if it does)
+    // 0644 permissions: rw-r--r-- (owner can read/write, others can read)
+    int fd = open(path, O_CREAT | O_EXCL, 0644);
+    
+    if (fd == -1) {
+        perror("Error creating file");
+        return;
+    }
+    
+    printf("File created successfully: %s\n", path);
+    close(fd);
+}
 
 void read_file(const char* path){
     int fd = open(path, O_RDONLY); //opens the files only read mode
